@@ -1,0 +1,23 @@
+<?php
+
+	include "conexao.php";
+	
+	//Consulta trazendo a lista de cursos
+	$sql = "SELECT `CURSO_COD`, `CURSO_NOME`, `CURSO_CODDISCIP` FROM `cursos`";
+	
+	//Execução da consulta
+	$retorno = mysql_query($sql, $conexao);
+
+
+	//Transformar a consulta em um array associativo
+	$dados = mysql_fetch_array($retorno);
+
+
+ 	//Criar variavel php para listar os dados
+	$codigo = $dados['CURSO_COD'];
+	$Curso = $dados['CURSO_NOME'];
+
+
+	echo "Nome do curso: $Curso <br />";
+
+?>
